@@ -1,8 +1,8 @@
 # ssh-enabled-dind
 An Ubuntu based Docker in Docker environment with SSH access. Designed for testing, DevOps labs and learning scenarios. Not recommended for production.
 
-> **⚠️ WARNING: NOT FOR PRODUCTION USE ⚠️**
-> Running DinD with root SSH access in production is insecure. **Use at your own risk.**
+> [!CAUTION]
+> **NOT FOR PRODUCTION USE!** Running DinD with root SSH access in production is insecure. **Use at your own risk.**
 
 ```bash
 docker run -d \

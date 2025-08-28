@@ -1,0 +1,4 @@
+---
+image:
+  name: ssh-enabled-dind
+  tag: latest

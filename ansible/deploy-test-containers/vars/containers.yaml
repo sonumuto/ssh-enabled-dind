@@ -1,0 +1,18 @@
+---
+containers:
+  - name: ssh-enabled-dind1
+    image: ssh-enabled-dind:latest
+    port: "2221:22"
+    privileged: true
+  - name: ssh-enabled-dind2
+    image: ssh-enabled-dind:latest
+    port: "2222:22"
+    privileged: true
+  - name: ssh-enabled-dind3
+    image: ssh-enabled-dind:latest
+    port: "2223:22"
+    privileged: true
+  - name: ssh-enabled-dind4
+    image: ssh-enabled-dind:latest
+    port: "2224:22"
+    privileged: true

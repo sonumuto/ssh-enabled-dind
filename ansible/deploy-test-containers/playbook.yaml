@@ -1,0 +1,35 @@
+---
+- name: Build ssh-enabled-dind image
+  hosts: localhost
+  gather_facts: false
+  vars_files:
+    - vars/image.yaml
+
+  tasks:
+    - name: Build image
+      community.docker.docker_image_build:
+        name: "{{ image.name }}:{{ image.tag }}"
+        path: ../../docker/.
+        dockerfile: Dockerfile
+
+- name: Deploy multiple SSH Enabled DinD containers
+  hosts: localhost
+  gather_facts: false
+  vars_files:
+    - vars/containers.yaml
+    - vars/image.yaml
+
+  tasks:
+    - name: Run container
+      community.docker.docker_container:
+        name: "{{ item.name }}"
+        image: "{{ image.name }}:{{ image.tag }}"
+        state: started
+        detach: true
+        privileged: "{{ item.privileged | default(false) }}"
+        ports:
+          - "{{ item.port }}"
+        pull: false
+      loop: "{{ containers }}"
+      loop_control:
+          label: "{{ item.name }}"

@@ -3,4 +3,3 @@
 collections:
   - name: community.docker
     version: ">=4.4.0"
-

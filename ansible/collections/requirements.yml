@@ -1,0 +1,6 @@
+---
+# Collections needed for the playbooks to parse/lint
+collections:
+  - name: community.docker
+    version: ">=4.4.0"
+

@@ -18,3 +18,4 @@ jobs:
         # optional (see below):
         with:
           setup_python: "true"
+          requirements_file: "ansible/collections/requirements.yml"

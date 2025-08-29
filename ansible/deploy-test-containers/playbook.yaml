@@ -32,4 +32,4 @@
         pull: false
       loop: "{{ containers }}"
       loop_control:
-          label: "{{ item.name }}"
+        label: "{{ item.name }}"

@@ -6,7 +6,7 @@ on:
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ "main" ]
-  
+
 jobs:
   build:
     name: Ansible Lint # Naming the build is important to use it as a status check
@@ -17,8 +17,4 @@ jobs:
         uses: ansible/ansible-lint@main # or vX.X.X version
         # optional (see below):
         with:
-          args: ""
-          gh_action_ref: "<version - e.g. `v25.5.0`>" # Not recommended for non-composite action use
           setup_python: "true"
-          working_directory: ""
-          requirements_file: ""
